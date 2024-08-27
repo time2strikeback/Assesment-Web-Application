@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student List</title>
+</head>
+<body>
+    <h1>Student List</h1>
+    <form method="GET">
+        {{ filter.form.as_p }}
+        <button type="submit">Search</button>
+    </form>
+    <ul>
+        {% for student in filter.qs %}
+        <li>{{ student.student_name }} - {{ student.subject.subject_name }} - {{ student.grade }} - {{ student.remarks }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
